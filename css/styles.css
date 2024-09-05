@@ -1,0 +1,181 @@
+.hidden {
+    display: none;
+}
+
+body {
+    background: #99ccff;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 14px;
+}
+
+.user-text {
+    width: 40%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+.inline-to-block {
+    display: block;
+}
+
+/* Button Styles */
+#submit-button, #hint, .buttons {
+    background-color: #007bff; /* Base blue color */
+    background-image: linear-gradient(145deg, #007bff, #0056b3); /* Gradient effect */
+    border-radius: 8px;
+    border: none; /* Removes the default border */
+    color: #ffffff; /* White text for better contrast */
+    cursor: pointer;
+    display: inline-block; /* Changed from block to inline-block for better control */
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 10px 5px; /* Adds some margin around the buttons */
+    padding: 12px 18px; /* Increased padding for a larger button size */
+    text-align: center;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06); /* Adds a soft shadow for depth */
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+#submit-button {
+    display: block;
+}
+
+#submit-button:hover, #hint:hover, .tryAgain:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    background-image: linear-gradient(145deg, #0056b3, #004494); /* Adjusted gradient for hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1); /* Slightly larger shadow on hover */
+    transform: translateY(-2px); /* Moves the button up slightly on hover */
+}
+
+#submit-button:active, #hint:active, .tryAgain:active {
+    background-color: #003f7f; /* Even darker blue when clicked */
+    background-image: linear-gradient(145deg, #004494, #003f7f); /* Adjusted gradient for active state */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); /* Reduces shadow when clicked */
+    transform: translateY(0); /* Moves the button back down when clicked */
+}
+
+#hint {
+    float: left;
+}
+
+#wordList {
+    background-color: #f0f8ff; /* Alice Blue background for word list area */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.sentences {
+    list-style-type: none;       /* Remove default bullet points */
+    padding: 10px;               /* Add padding around the sentences */
+    margin-bottom: 15px;         /* Add space between sentences */
+    background-color: #ffcc80;   /* Light orange background for sentences */
+    border-radius: 8px;          /* Rounded corners */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+}
+
+.words {
+    display: inline-block;       /* Display words inline within sentences */
+    background-color: white;     /* White background for words */
+    color: black;                /* Black text color for words */
+    padding: 5px;                /* Padding around each word */
+    margin: 3px;                 /* Margin around each word for spacing */
+    border-radius: 3px;          /* Rounded corners for words */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
+}
+
+/* Grid Layout for Drop Area */
+#dropArea {
+    display: grid;                         /* Use grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Create columns that are at least 120px wide, but can grow */
+    gap: 2px;                             /* Space between grid items */
+    padding: 10px;                         /* Padding around the grid container */
+    background-color: #f0f0f0;             /* Light background for the drop area */
+    border-radius: 5px;                    /* Rounded corners for the drop area */
+    border: 1px solid #ccc;                /* Border around the drop area */
+    width: 100%;                           /* Full width for container */
+    box-sizing: border-box;                /* Include padding and border in the element's dimensions */
+}
+
+/* Grid Layout for Drop Area Items */
+.drop-area {
+    height: 40px;                          /* Fixed height for each drop area */
+    border: 1px dashed #aaa;               /* Dashed border for drop areas */
+    display: flex;                         /* Use flexbox to center content within each grid cell */
+    align-items: center;                   /* Center content vertically */
+    justify-content: center;               /* Center content horizontally */
+    background-color: #ffffff;             /* Background color for drop areas */
+    border-radius: 3px;                    /* Rounded corners */
+    padding: 5px;                          /* Padding around content */
+    box-sizing: border-box;                /* Include padding and border in the element's dimensions */
+    text-align: center;                    /* Center text inside the drop area */
+}
+
+/* Drop Area States */
+.drop-area.highlight {
+    background-color: #ffcccc;             /* Highlight color for correct matches */
+    animation: glow 1s infinite;           /* Animation for glowing effect */
+}
+
+.drop-area.correct {
+    background-color: #c6f6d5;             /* Color for correct placement */
+    border-color: #68d391;                 /* Border color for correct placement */
+}
+
+.drop-area.incorrect {
+    background-color: #fed7d7;             /* Color for incorrect placement */
+    border-color: #f56565;                 /* Border color for incorrect placement */
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0% { background-color: #ffcccc; }
+    50% { background-color: #ff6666; }
+    100% { background-color: #ffcccc; }
+}
+
+/* Hide Empty Elements */
+.sentences:empty {
+    display: none; /* Hide sentences with no words */
+}
+
+#wordList:empty {
+    display: none;
+}
+
+/* Animation for Word Hint */
+.word-hint {
+    animation: myfirst 4s 1;
+}
+
+@keyframes myfirst {
+    0% { background: #98fc03; }
+    25% { background: #7ffc03; }
+    75% { background: #49fc03; }
+    100% { background: #03fca1; }
+}
+
+.a-hint {
+    background: #006400;
+}
+
+#dictionary {
+    width: 500px;
+    height: 500px;
+    margin-bottom: 20px;
+    border: 1px solid cyan;
+    display: none;
+    flex-direction: column;
+}
