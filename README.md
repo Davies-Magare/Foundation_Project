@@ -12,6 +12,7 @@ writing skills, punctuation, and grammar.</p>
 <h1>Features</h1>
 <ol>
   <li><b>Drag and Drop:</b> Users can drag and drop words from a shuffled list to a checking area<li>
+    
   <li><b>Visual Feedback:</b> Once a correct word is placed in the check area, the tile glows green, indicating a correct drop.</li>
 </ol>
 
