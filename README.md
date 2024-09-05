@@ -16,4 +16,14 @@ writing skills, punctuation, and grammar.</p>
 </ul>
 <h1>Technologies Used</h1>
 <p>Html Css Javscript Jquery</p>
+<h1>Usage</h1>
+<p>Clone the project and open the user-input file on a browser</p>
+<p>Paste any paragraph in the input box(small chunks are preferable) and press the shuffle button.</p>
+<p>Each sentence has been shuffled separately. Drag and drop each word to the drop area to reconstruct the sentence.</p>
+<h1>Future improvements</h1>
+<p>Add a dictionary feature to enable word search.</p>
+<p>Improve the hint system: clicking on each drop area should give a hint of the correct word</p>
+<p>Add a landing page to explain more about the project.</p>
+<h1>Contributors</h1>
+<p>Davies Magare davieskamanda@gmail.com</p>
 
